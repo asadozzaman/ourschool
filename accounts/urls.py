@@ -1,5 +1,5 @@
 from django.urls import path, include
-from . import views,HodViews
+from . import views,HodViews,StaffViews
 
 
 
@@ -48,6 +48,10 @@ urlpatterns = [
 
     path('admin_profile/', HodViews.admin_profile, name="admin_profile"),
     path('admin_profile_update/', HodViews.admin_profile_update, name="admin_profile_update"),
+
+    # URLS for Staff
+    path('staff_home/', StaffViews.staff_home, name="staff_home"),
+
 
     path('my/', views.my, name="my"),
 ]
