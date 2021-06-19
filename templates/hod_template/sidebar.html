@@ -1,0 +1,122 @@
+
+{% load static %}
+
+
+<nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
+    <div class="logo d-flex justify-content-between">
+        <a href="index-2.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="ti-close"></i>
+        </div>
+    </div>
+    <ul id="sidebar_menu">
+       <li class="">
+            <a href="{% url 'manage_staff' %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
+                </div>
+                <span>Manage Staff</span>
+            </a>
+        </li>
+         <li class="">
+            <a href="{% url 'manage_course' %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
+                </div>
+                <span>Manage Course</span>
+            </a>
+        </li>
+         <li class="">
+            <a href="{% url 'manage_session' %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
+                </div>
+                <span>Manage Session</span>
+            </a>
+        </li>
+         <li class="">
+            <a href="{% url 'manage_student' %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
+                </div>
+                <span>Manage Student</span>
+            </a>
+        </li>
+        <li class="mm-active">
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/dashboard.svg' %}" alt="">
+                </div>
+                <span>Dashboard</span>
+            </a>
+            <ul>
+                <li><a class="active" href="index-2.html">Marketing</a></li>
+                <li><a href="index_2.html">Default</a></li>
+                <li><a href="index_3.html">Dark Menu</a></li>
+            </ul>
+        </li>
+        <li class="">
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/2.svg' %}" alt="">
+                </div>
+                <span>Apps</span>
+            </a>
+            <ul>
+                <li><a href="editor.html">editor</a></li>
+                <li><a href="mail_box.html">Mail Box</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </li>
+
+
+
+        <li class="">
+            <a class="has-arrow" href="#" aria-expanded="false">
+
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/8.svg' %}" alt="">
+                </div>
+                <span>Products</span>
+            </a>
+            <ul>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="Product_Details.html">Product Details</a></li>
+                <li><a href="Cart.html">Cart</a></li>
+                <li><a href="Checkout.html">Checkout</a></li>
+            </ul>
+        </li>
+        <li class="">
+            <a class="has-arrow" href="#" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/8.svg' %}" alt="">
+                </div>
+                <span>Icons</span>
+            </a>
+            <ul>
+                <li><a href="Fontawesome_Icon.html">Fontawesome Icon</a></li>
+                <li><a href="themefy_icon.html">themefy icon</a></li>
+            </ul>
+        </li>
+
+        <li class="">
+            <a class="has-arrow" href="#" aria-expanded="false">
+
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/16.svg' %}" alt="">
+                </div>
+                <span>Pages</span>
+            </a>
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="resister.html">Register</a></li>
+                <li><a href="error_400.html">Error 404</a></li>
+                <li><a href="error_500.html">Error 500</a></li>
+                <li><a href="forgot_pass.html">Forgot Password</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</nav>

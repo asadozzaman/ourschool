@@ -27,7 +27,7 @@ def doLogin(request):
             user_type = user.user_type
             # return HttpResponse("Email: "+request.POST.get('email')+ " Password: "+request.POST.get('password'))
             if user_type == '1':
-                return redirect('my')
+                return redirect('admin_home')
 
             elif user_type == '2':
                 # return HttpResponse("Staff Login")
@@ -44,3 +44,7 @@ def doLogin(request):
             # return HttpResponseRedirect("/")
             return redirect('login')
 
+
+def logout_user(request):
+    logout(request)
+    return HttpResponseRedirect('/')
