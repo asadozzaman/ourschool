@@ -433,3 +433,100 @@ def delete_student(request, student_id):
     except:
         messages.error(request, "Failed to Delete Student.")
         return redirect('manage_student')
+
+
+def add_subject(request):
+    courses = Courses.objects.all()
+    staffs = CustomUser.objects.filter(user_type='2')
+    context = {
+        "courses": courses,
+        "staffs": staffs
+    }
+    return render(request, 'hod_template/add_subject_template.html', context)
+
+
+def add_subject_save(request):
+    if request.method != "POST":
+        messages.error(request, "Method Not Allowed!")
+        return redirect('add_subject')
+    else:
+        subject_name = request.POST.get('subject')
+
+        course_id = request.POST.get('course')
+        course = Courses.objects.get(id=course_id)
+
+        staff_id = request.POST.get('staff')
+        staff = CustomUser.objects.get(id=staff_id)
+
+        try:
+            subject = Subjects(subject_name=subject_name, course_id=course, staff_id=staff)
+            subject.save()
+            messages.success(request, "Subject Added Successfully!")
+            return redirect('add_subject')
+        except:
+            messages.error(request, "Failed to Add Subject!")
+            return redirect('add_subject')
+
+
+def manage_subject(request):
+    subjects = Subjects.objects.all()
+    context = {
+        "subjects": subjects
+    }
+    return render(request, 'hod_template/manage_subject_template.html', context)
+
+
+def edit_subject(request, subject_id):
+    subject = Subjects.objects.get(id=subject_id)
+    courses = Courses.objects.all()
+    staffs = CustomUser.objects.filter(user_type='2')
+    context = {
+        "subject": subject,
+        "courses": courses,
+        "staffs": staffs,
+        "id": subject_id
+    }
+    return render(request, 'hod_template/edit_subject_template.html', context)
+
+
+def edit_subject_save(request):
+    if request.method != "POST":
+        HttpResponse("Invalid Method.")
+    else:
+        subject_id = request.POST.get('subject_id')
+        subject_name = request.POST.get('subject')
+        course_id = request.POST.get('course')
+        staff_id = request.POST.get('staff')
+
+        try:
+            subject = Subjects.objects.get(id=subject_id)
+            subject.subject_name = subject_name
+
+            course = Courses.objects.get(id=course_id)
+            subject.course_id = course
+
+            staff = CustomUser.objects.get(id=staff_id)
+            subject.staff_id = staff
+
+            subject.save()
+
+            messages.success(request, "Subject Updated Successfully.")
+            # return redirect('/edit_subject/'+subject_id)
+            return HttpResponseRedirect(reverse("edit_subject", kwargs={"subject_id": subject_id}))
+
+        except:
+            messages.error(request, "Failed to Update Subject.")
+            return HttpResponseRedirect(reverse("edit_subject", kwargs={"subject_id": subject_id}))
+            # return redirect('/edit_subject/'+subject_id)
+
+
+def delete_subject(request, subject_id):
+    subject = Subjects.objects.get(id=subject_id)
+    try:
+        subject.delete()
+        messages.success(request, "Subject Deleted Successfully.")
+        return redirect('manage_subject')
+    except:
+        messages.error(request, "Failed to Delete Subject.")
+        return redirect('manage_subject')
+
