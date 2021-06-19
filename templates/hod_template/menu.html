@@ -116,11 +116,11 @@
                             <div class="profile_info_iner">
                                 <div class="profile_author_name">
                                     <p>Neurologist </p>
-                                    <h5>Dr. Robar Smith</h5>
+                                    <h5>{{ user.first_name }} {{ user.last_name }}</h5>
                                 </div>
                                 <div class="profile_info_details">
-                                    <a href="#">My Profile </a>
-                                    <a href="#">Settings</a>
+                                    <a href="{% url 'admin_profile' %}">My Profile </a>
+
                                     <a href="{% url 'logout_user' %}">Log Out </a>
                                 </div>
                             </div>

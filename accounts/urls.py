@@ -46,6 +46,8 @@ urlpatterns = [
     path('edit_subject_save/', HodViews.edit_subject_save, name="edit_subject_save"),
     path('delete_subject/<subject_id>/', HodViews.delete_subject, name="delete_subject"),
 
+    path('admin_profile/', HodViews.admin_profile, name="admin_profile"),
+    path('admin_profile_update/', HodViews.admin_profile_update, name="admin_profile_update"),
 
     path('my/', views.my, name="my"),
 ]
