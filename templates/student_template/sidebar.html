@@ -1,0 +1,58 @@
+
+{% load static %}
+
+
+<nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
+    <div class="logo d-flex justify-content-between">
+        <a href="index-2.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="ti-close"></i>
+        </div>
+    </div>
+    <ul id="sidebar_menu">
+       <li class="">
+            <a href="{% url 'student_home' %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
+                </div>
+                <span> Home</span>
+            </a>
+        </li>
+         <li class="">
+            <a href="{% url 'student_view_attendance' %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
+                </div>
+                <span> View Attendance</span>
+            </a>
+        </li>
+         <li class="">
+            <a href="{% url 'student_view_result' %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
+                </div>
+                <span>View Result</span>
+            </a>
+        </li>
+         <li class="">
+            <a href="{% url 'student_apply_leave' %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
+                </div>
+                <span>Apply for Leave</span>
+            </a>
+        </li>
+          <li class="">
+            <a href="{% url 'student_feedback' %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
+                </div>
+                <span> Send Feedback</span>
+            </a>
+        </li>
+
+
+
+
+    </ul>
+</nav>

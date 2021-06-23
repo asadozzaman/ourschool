@@ -35,7 +35,7 @@ def doLogin(request):
 
             elif user_type == '3':
                 # return HttpResponse("Student Login")
-                return redirect('my')
+                return redirect('student_home')
             else:
                 messages.error(request, "Invalid Login!")
                 return redirect('login')
