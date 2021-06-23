@@ -1,7 +1,5 @@
 from django.urls import path, include
-from . import views,HodViews,StaffViews, StudentViews
-
-
+from . import views, HodViews, StaffViews, StudentViews
 
 urlpatterns = [
     path('', views.loginPage, name="login"),
@@ -16,7 +14,6 @@ urlpatterns = [
     path('edit_staff/<staff_id>/', HodViews.edit_staff, name="edit_staff"),
     path('edit_staff_save/', HodViews.edit_staff_save, name="edit_staff_save"),
     path('delete_staff/<staff_id>/', HodViews.delete_staff, name="delete_staff"),
-
 
     path('add_course/', HodViews.add_course, name="add_course"),
     path('add_course_save/', HodViews.add_course_save, name="add_course_save"),
@@ -49,6 +46,26 @@ urlpatterns = [
     path('admin_profile/', HodViews.admin_profile, name="admin_profile"),
     path('admin_profile_update/', HodViews.admin_profile_update, name="admin_profile_update"),
 
+    path('check_email_exist/', HodViews.check_email_exist, name="check_email_exist"),
+    path('check_username_exist/', HodViews.check_username_exist, name="check_username_exist"),
+    path('student_feedback_message/', HodViews.student_feedback_message, name="student_feedback_message"),
+    path('student_feedback_message_reply/', HodViews.student_feedback_message_reply,
+         name="student_feedback_message_reply"),
+    path('staff_feedback_message/', HodViews.staff_feedback_message, name="staff_feedback_message"),
+    path('staff_feedback_message_reply/', HodViews.staff_feedback_message_reply, name="staff_feedback_message_reply"),
+    path('student_leave_view/', HodViews.student_leave_view, name="student_leave_view"),
+    path('student_leave_approve/<leave_id>/', HodViews.student_leave_approve, name="student_leave_approve"),
+    path('student_leave_reject/<leave_id>/', HodViews.student_leave_reject, name="student_leave_reject"),
+    path('staff_leave_view/', HodViews.staff_leave_view, name="staff_leave_view"),
+    path('staff_leave_approve/<leave_id>/', HodViews.staff_leave_approve, name="staff_leave_approve"),
+    path('staff_leave_reject/<leave_id>/', HodViews.staff_leave_reject, name="staff_leave_reject"),
+    path('admin_view_attendance/', HodViews.admin_view_attendance, name="admin_view_attendance"),
+    path('admin_get_attendance_dates/', HodViews.admin_get_attendance_dates, name="admin_get_attendance_dates"),
+    path('admin_get_attendance_student/', HodViews.admin_get_attendance_student, name="admin_get_attendance_student"),
+
+
+
+
     # URLS for Staff
     path('staff_home/', StaffViews.staff_home, name="staff_home"),
     path('staff_take_attendance/', StaffViews.staff_take_attendance, name="staff_take_attendance"),
@@ -79,7 +96,6 @@ urlpatterns = [
     path('student_profile/', StudentViews.student_profile, name="student_profile"),
     path('student_profile_update/', StudentViews.student_profile_update, name="student_profile_update"),
     path('student_view_result/', StudentViews.student_view_result, name="student_view_result"),
-
 
     path('my/', views.my, name="my"),
 ]
