@@ -1,4 +1,3 @@
-
 {% load static %}
 
 
@@ -10,49 +9,54 @@
         </div>
     </div>
     <ul id="sidebar_menu">
-       <li class="">
-            <a href="{% url 'manage_staff' %}" aria-expanded="false">
+        <li class="">
+            <a href="{% url 'staff_home' %}" aria-expanded="false">
                 <div class="icon_menu">
                     <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
                 </div>
-                <span>Manage Staff</span>
+                <span>Home</span>
             </a>
         </li>
-         <li class="">
-            <a href="{% url 'manage_course' %}" aria-expanded="false">
+        <li class="">
+            <a href="{% url 'staff_take_attendance' %}" aria-expanded="false">
                 <div class="icon_menu">
                     <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
                 </div>
-                <span>Manage Course</span>
+                <span>Take Attendance</span>
             </a>
         </li>
-         <li class="">
-            <a href="{% url 'manage_session' %}" aria-expanded="false">
+        <li class="">
+            <a href="{% url 'staff_update_attendance' %}" aria-expanded="false">
                 <div class="icon_menu">
                     <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
                 </div>
-                <span>Manage Session</span>
+                <span>View Update Attendance</span>
             </a>
         </li>
-         <li class="">
-            <a href="{% url 'manage_student' %}" aria-expanded="false">
+
+        <li class="">
+            <a href="{% url 'staff_add_result' %}" aria-expanded="false">
                 <div class="icon_menu">
                     <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
                 </div>
-                <span>Manage Student</span>
+                <span> Add Result</span>
             </a>
         </li>
           <li class="">
-            <a href="{% url 'manage_subject' %}" aria-expanded="false">
+            <a href="{% url 'staff_apply_leave' %}" aria-expanded="false">
                 <div class="icon_menu">
                     <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
                 </div>
-                <span>Manage Subject</span>
+                <span>  Apply Leave</span>
             </a>
         </li>
-
-
-
-
+         <li class="">
+            <a href="{% url 'staff_feedback' %}" aria-expanded="false">
+                <div class="icon_menu">
+                    <img src="{% static 'img/menu-icon/5.svg' %}" alt="">
+                </div>
+                <span>  Feedback</span>
+            </a>
+        </li>
     </ul>
 </nav>

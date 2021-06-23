@@ -301,8 +301,6 @@ def add_student_save(request):
             try:
                 user = CustomUser.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name, user_type=3)
 
-
-
                 # user.students.address = address
 
                 course_obj = Courses.objects.get(id=course_id)
@@ -314,10 +312,10 @@ def add_student_save(request):
                 # user.students.gender = gender
                 # user.students.profile_pic = profile_pic_url
 
-                students = Students.objects.create(admin=user, address=address, gender=gender,session_year_id=session_year_obj,
-                                                   profile_pic=profile_pic_url)
+                # students = Students.objects.create(admin=user, address=address, gender=gender,session_year_obj=session_year_id,
+                #                                    profile_pic=profile_pic_url)
                 user.save()
-                students.save()
+                # students.save()
                 messages.success(request, "Student Added Successfully!")
                 return redirect('add_student')
             except:

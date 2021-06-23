@@ -11,7 +11,7 @@
     <title>Marketing</title>
 
     <link rel="icon" href="img/logo.png" type="image/png">
-    {% include 'hod_template/css.html' %}
+    {% include 'staff_template/css.html' %}
 
 </head>
 <body class="crm_body_bg">
@@ -20,14 +20,14 @@
 <!-- main content part here -->
 
 <!-- sidebar  -->
-    {% include 'hod_template/sidebar.html' %}
+    {% include 'staff_template/sidebar.html' %}
 
 <!--/ sidebar  -->
 
 
 <section class="main_content dashboard_part large_header_bg">
     <!-- menu  -->
-    {% include 'hod_template/menu.html' %}
+    {% include 'staff_template/menu.html' %}
     <!--/ menu  -->
 
      <!--/ main content  -->
@@ -39,7 +39,7 @@
 
 
     <!-- footer part -->
-    {% include 'hod_template/footer.html' %}
+    {% include 'staff_template/footer.html' %}
     <!-- end footer part -->
 </section>
 <!-- main content part end -->
@@ -170,7 +170,11 @@
     </a>
 </div>
 
-{% include 'hod_template/js.html' %}
+{% include 'staff_template/js.html' %}
+
+{% block custom_js %}
+
+    {% endblock %}
 </body>
 
 </html>
